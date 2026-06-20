@@ -26,6 +26,8 @@ import { DocumentsPage } from './pages/documents/DocumentsPage';
 import { SettingsPage } from './pages/settings/SettingsPage';
 import { HelpPage } from './pages/help/HelpPage';
 import { DealsPage } from './pages/deals/DealsPage';
+import { MeetingsPage } from './pages/meetings/MeetingsPage';
+import { CallPage } from './pages/call/CallPage';
 
 // Chat Pages
 import { ChatPage } from './pages/chat/ChatPage';
@@ -80,6 +82,10 @@ function App() {
             <Route index element={<HelpPage />} />
           </Route>
           
+          <Route path="/meetings" element={<DashboardLayout />}>
+            <Route index element={<MeetingsPage />} />
+          </Route>
+
           <Route path="/deals" element={<DashboardLayout />}>
             <Route index element={<DealsPage />} />
           </Route>
@@ -91,6 +97,8 @@ function App() {
           </Route>
           
           {/* Redirect root to login */}
+          <Route path="/call/:roomId" element={<CallPage />} />
+          <Route path="/call/:roomId" element={<CallPage />} />
           <Route path="/" element={<Navigate to="/login" replace />} />
           
           {/* Catch all other routes and redirect to login */}
